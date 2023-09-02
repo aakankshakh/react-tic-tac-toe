@@ -2,15 +2,15 @@ import { useState, onSquareClick } from "react";
 
 function Square({ i, value, onSquareClick }) {
   const yBorder = i < 3 ? "border-y-2" : "border-b-2";
-  const xBorder = i % 3 == 0 ? "border-x-2" : "border-r-2";
+  const xBorder = i % 3 === 0 ? "border-x-2" : "border-r-2";
 
-  borderStyle = xBorder + " " + yBorder;
+  const borderStyle = xBorder + " " + yBorder;
 
   return (
     <button
       className={
         borderStyle +
-        "border-solid border-[#882f13] w-40 h-40 float-left text-8xl font-bold -mt-1 -mr-1 p-0 text-center"
+        " border-solid border-[#882f13] w-40 h-40 float-left text-8xl font-bold -mt-1 -mr-1 p-0 text-center"
       }
       onClick={onSquareClick}
     >
@@ -42,12 +42,12 @@ export default function Board() {
     status = "Next Player: " + (xIsNext ? "X" : "O") + "'s turn!";
   }
   return (
-    <div className="min-h-screen min-w-screen bg-[#f1f0ea] text-[#882f13]">
-      <h1 className="flex flex-col items-center text-7xl font-bold underline underline-offset-4 mb-5">
+    <div className="flex flex-col items-center min-h-screen bg-[#f1f0ea] text-[#882f13]">
+      <h1 className="text-7xl font-bold underline underline-offset-4 mb-5">
         Tic Tac Toe
       </h1>
       <a
-        className="flex flex-col items-center text-l mb-10 hover:underline underline-offset-4"
+        className="text-l mb-10 hover:underline underline-offset-4"
         href="https://aakanksha.ca"
       >
         Made by Aakanksha
@@ -58,13 +58,11 @@ export default function Board() {
             key={index}
             i={index}
             value={square}
-            onSquareClick={() => handleClick(0)}
+            onSquareClick={() => handleClick(index)}
           />
         ))}
       </div>
-      <h1 className="flex flex-col items-center mt-10 text-2xl font-semibold">
-        {status}
-      </h1>
+      <h1 className="mt-10 text-2xl font-semibold">{status}</h1>
     </div>
   );
 }

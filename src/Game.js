@@ -6,7 +6,9 @@ function Square({ i, value, onSquareClick }) {
   const borderStyle = xBorder + " " + yBorder;
 
   const textColor =
-    value === "X" ? "text-[#172B23]" : "text-[#D88C9A] dark:text-[#f1f0ea]";
+    value === "X"
+      ? "text-[#F5B251] dark:text-[#fbcc8b]"
+      : "text-[#D88C9A] dark:text-[#eeafbb]";
   //trying to make X different color from O
 
   return (
@@ -65,7 +67,7 @@ export default function Board({ playerOne }) {
   }
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-[#f1f0ea] text-[#8e2a0c] dark:bg-[#8e2a0c] dark:text-[#f1f0ea]">
+    <div className="flex flex-col items-center min-h-screen bg-[#f1f0ea] text-[#8e2a0c] dark:bg-[#5f210d] dark:text-[#f1f0ea]">
       <h1 className="text-7xl font-bold underline underline-offset-4 mb-5">
         Tic Tac Toe
       </h1>

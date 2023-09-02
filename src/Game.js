@@ -9,8 +9,8 @@ function Square({ i, value, onSquareClick }) {
 
   const textColor =
     value === "X"
-      ? "text-[#F5B251] dark:text-[#fbcc8b]"
-      : "text-[#D88C9A] dark:text-[#eeafbb]";
+      ? "text-[#F5B251] dark:text-[#ffbe64]"
+      : "text-[#D88C9A] dark:text-[#ffb0bf]";
   //trying to make X different color from O
 
   return (

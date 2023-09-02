@@ -12,10 +12,6 @@ function playerButton(label, name) {
   );
 }
 
-function handleClick() {
-  window.location.href = "/App.js";
-}
-
 export default function teehee() {
   return (
     <div className="flex flex-col items-center min-h-screen bg-[#f1f0ea] text-[#882f13]">
@@ -53,10 +49,7 @@ export default function teehee() {
           />
         </label>
 
-        <button
-          class="h-12 px-6 text-xl text-[#882f13] m-5 transition-colors duration-150 border-2 border-[#882f13] rounded-lg focus:shadow-outline hover:bg-[#882f13] hover:text-[#f1f0ea]"
-          onClick={handleClick()}
-        >
+        <button class="h-12 px-6 text-xl text-[#882f13] m-5 transition-colors duration-150 border-2 border-[#882f13] rounded-lg focus:shadow-outline hover:bg-[#882f13] hover:text-[#f1f0ea]">
           Start Game!
         </button>
       </div>

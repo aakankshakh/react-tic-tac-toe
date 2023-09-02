@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 function Square({ i, value, onSquareClick }) {
-  const yBorder = i < 3 ? "border-y-4" : "border-b-4";
-  const xBorder = i % 3 === 0 ? "border-x-4" : "border-r-4";
+  const yBorder =
+    i < 3 ? "border-y-2 md:border-y-4" : "border-b-2 md:border-b-4";
+  const xBorder =
+    i % 3 === 0 ? "border-x-2 md:border-x-4" : "border-r-2 md:border-r-4";
   const borderStyle = xBorder + " " + yBorder;
 
   const textColor =
@@ -17,7 +19,7 @@ function Square({ i, value, onSquareClick }) {
         borderStyle +
         " " +
         textColor +
-        " border-solid border-[#882f13] dark:border-[#f1f0ea] w-40 h-40 float-left text-8xl font-bold -mt-1 -mr-1 p-0 text-center"
+        " border-solid border-[#882f13] dark:border-[#f1f0ea] w-20 h-20 md:w-40 md:h-40 float-left text-6xl md:text-8xl font-bold -mt-1 -mr-1 p-0 text-center"
       }
       onClick={onSquareClick}
     >
@@ -68,10 +70,10 @@ export default function Board({ playerOne }) {
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-[#f1f0ea] text-[#8e2a0c] dark:bg-[#5f210d] dark:text-[#f1f0ea]">
-      <h1 className="text-7xl font-bold underline underline-offset-4 mb-5">
+      <h1 className="text-5xl md:text-7xl font-bold underline underline-offset-4 mb-5">
         Tic Tac Toe
       </h1>
-      <h1 className="text-xl font-medium mb-10">
+      <h1 className="text-l md:text-xl font-medium mb-10">
         Made by{" "}
         <a
           className="hover:underline decoration-dotted underline-offset-4"

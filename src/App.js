@@ -35,8 +35,21 @@ export default function Board() {
   }
 
   const winner = calculateWinner(squares);
+  let tie = false;
+  for (let i = 0; i < 9; i++) {
+    let square = squares[i];
+    if (!square) {
+      tie = false;
+      break;
+    } else {
+      tie = true;
+    }
+  }
+  // tie = squares.map((square, index) => !(tie && !square));
   let status;
-  if (winner) {
+  if (tie) {
+    status = "It's a tie!";
+  } else if (winner) {
     status = "Winner: " + winner;
   } else {
     status = "Next Player: " + (xIsNext ? "X" : "O") + "'s turn!";

@@ -3,7 +3,7 @@ import { useState, onSquareClick } from "react";
 function Square({ value, onSquareClick }) {
   return (
     <button
-      className="bg-[#fff] border border-solid border-black float-left text-2xl font-bold h-[34px] -mt-1 -mr-1 p-0 text-center w-[34px]"
+      className="border-2 border-solid border-black w-40 h-40 float-left text-8xl font-bold -mt-1 -mr-1 p-0 text-center "
       onClick={onSquareClick}
     >
       {value}
@@ -34,26 +34,32 @@ export default function Board() {
     status = "Next Player: " + (xIsNext ? "X" : "O") + "'s turn!";
   }
   return (
-    <div className="]">
-      <h1 className="text-7xl ">Tic Tac Toe</h1>
-      <div className="item-center">
-        <div className="clear-both content-none table">
-          <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-          <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-          <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-        </div>
-        <div className="clear-both content-none table">
-          <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-          <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-          <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-        </div>
-        <div className="clear-both content-none table">
-          <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-          <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-          <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-        </div>
+    <div className="box-border flex flex-col items-center bg-[#f1f0ea]">
+      <h1 className="text-7xl font-bold underline underline-offset-4 mb-5">
+        Tic Tac Toe
+      </h1>
+      <a
+        className="text-l mb-10 hover:underline underline-offset-4"
+        href="https://aakanksha.ca"
+      >
+        Made by Aakanksha
+      </a>
+      <div className="flex flex-row clear-both">
+        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
       </div>
-      <div className="mt-[10px]">{status}</div>
+      <div className="flex flex-row clear-both">
+        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+      </div>
+      <div className="flex flex-row clear-both">
+        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
+      <h1 className="mt-10 text-2xl font-semibold">{status}</h1>
     </div>
   );
 }

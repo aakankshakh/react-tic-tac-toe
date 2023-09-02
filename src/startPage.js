@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 function playerButton(label, name) {
   return (
@@ -14,9 +15,11 @@ function playerButton(label, name) {
   );
 }
 
+
+//const [page, setPage] = useState("start");
+ // if (page === "start ") {
 export default function teehee() {
-  const [page, setPage] = useState("start");
-  if (page === "start ") {
+
     return (
       <div className="flex flex-col items-center min-h-screen bg-[#f1f0ea] text-[#882f13]">
         <h1 className="text-7xl font-bold underline underline-offset-4 mb-5">
@@ -52,17 +55,16 @@ export default function teehee() {
               defaultValue="Dan"
             />
           </label>
-
+            <Link to="/game">
           <button
             class="h-12 px-6 text-xl text-[#882f13] m-5 transition-colors duration-150 border-2 border-[#882f13] rounded-lg focus:shadow-outline hover:bg-[#882f13] hover:text-[#f1f0ea]"
             onClick={() => setPage("game")}
           >
             Start Game!
           </button>
+          </Link>
         </div>
       </div>
     );
-  } //else if (page === "game") {
-  //return <Game />;
-  //}
+  }
 }

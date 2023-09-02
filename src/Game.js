@@ -1,18 +1,20 @@
 import { useState } from "react";
 
-function Square({ i, value, xNext, onSquareClick }) {
+function Square({ i, value, onSquareClick }) {
   const yBorder = i < 3 ? "border-y-4" : "border-b-4";
   const xBorder = i % 3 === 0 ? "border-x-4" : "border-r-4";
-
   const borderStyle = xBorder + " " + yBorder;
 
-  const textColor = xNext ? "text-[#172B23]" : "text-[#882f13]";
+  const textColor =
+    value === "X" ? "text-[#172B23]" : "text-[#D88C9A] dark:text-[#f1f0ea]";
   //trying to make X different color from O
 
   return (
     <button
       className={
         borderStyle +
+        " " +
+        textColor +
         " border-solid border-[#882f13] dark:border-[#f1f0ea] w-40 h-40 float-left text-8xl font-bold -mt-1 -mr-1 p-0 text-center"
       }
       onClick={onSquareClick}
@@ -22,9 +24,7 @@ function Square({ i, value, xNext, onSquareClick }) {
   );
 }
 
-function toggleThemeButton() {
-  
-}
+function toggleThemeButton() {}
 
 export default function Board({ playerOne }) {
   const [xIsNext, setXIsNext] = useState(true);
@@ -35,7 +35,6 @@ export default function Board({ playerOne }) {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
   }
-
   function handleClick(i) {
     if (squares[i] || calculateWinner(squares)) {
       return;
@@ -58,7 +57,7 @@ export default function Board({ playerOne }) {
 
   let status;
   if (winner) {
-    status = "Winner: " + winner;
+    status = "Winner: " + winner + "!";
   } else if (tie) {
     status = "It's a tie!";
   } else {
@@ -85,7 +84,6 @@ export default function Board({ playerOne }) {
             key={index}
             i={index}
             value={square}
-            xNext={xIsNext}
             onSquareClick={() => handleClick(index)}
           />
         ))}

@@ -1,10 +1,13 @@
-import { useState, onSquareClick } from "react";
+import { useState } from "react";
 
-function Square({ i, value, onSquareClick }) {
+function Square({ i, value, xNext, onSquareClick }) {
   const yBorder = i < 3 ? "border-y-4" : "border-b-4";
   const xBorder = i % 3 === 0 ? "border-x-4" : "border-r-4";
 
   const borderStyle = xBorder + " " + yBorder;
+
+  const textColor = xNext ? "text-[#172B23]" : "text-[#882f13]";
+  //trying to make X different color from O
 
   return (
     <button
@@ -19,9 +22,19 @@ function Square({ i, value, onSquareClick }) {
   );
 }
 
+function toggleThemeButton() {
+  
+}
+
 export default function Board({ playerOne }) {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [theme, setTheme] = useState("light");
+
+  function toggleTheme() {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  }
 
   function handleClick(i) {
     if (squares[i] || calculateWinner(squares)) {
@@ -72,6 +85,7 @@ export default function Board({ playerOne }) {
             key={index}
             i={index}
             value={square}
+            xNext={xIsNext}
             onSquareClick={() => handleClick(index)}
           />
         ))}

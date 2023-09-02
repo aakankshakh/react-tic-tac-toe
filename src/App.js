@@ -1,8 +1,8 @@
 import { useState, onSquareClick } from "react";
 
-function Square({i, value, onSquareClick}) {
-  const yBorder = index < 3 ? "border-y-2" : "border-b-2";
-  const xBorder = index % 3 == 0 ? "border-x-2" : "border-r-2";
+function Square({ i, value, onSquareClick }) {
+  const yBorder = i < 3 ? "border-y-2" : "border-b-2";
+  const xBorder = i % 3 == 0 ? "border-x-2" : "border-r-2";
 
   borderStyle = xBorder + " " + yBorder;
 

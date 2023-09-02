@@ -70,7 +70,7 @@ export default function Board({ playerOne }) {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#f1f0ea] text-[#8e2a0c] dark:bg-[#5f210d] dark:text-[#f1f0ea]">
-      <h1 className="text-5xl md:text-7xl mt-5 font-bold underline underline-offset-4 mb-5">
+      <h1 className="text-5xl md:text-7xl font-bold underline underline-offset-4 mb-5">
         Tic Tac Toe
       </h1>
       <h1 className="text-l md:text-xl font-medium mb-10">

@@ -19,7 +19,7 @@ function Square({ i, value, onSquareClick }) {
   );
 }
 
-export default function Board() {
+export default function Board({ playerOne }) {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
 
@@ -76,6 +76,7 @@ export default function Board() {
         ))}
       </div>
       <h1 className="mt-10 text-2xl font-semibold">{status}</h1>
+      <h1 className="mt-10 text-2xl font-semibold">{playerOne}</h1>
     </div>
   );
 }

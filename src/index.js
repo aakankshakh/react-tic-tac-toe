@@ -3,10 +3,13 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 
 import App from "./App";
+import StartPage from "./startPage";
+
+//<App playerOne={"A"} />
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <App />
+    <StartPage />
   </StrictMode>
 );

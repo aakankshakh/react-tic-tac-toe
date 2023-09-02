@@ -3,12 +3,13 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 
 import StartPage from "./startPage";
+import Game from "./game";
 
 //<App playerOne={"A"} />
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <StartPage />
+    <Game />
   </StrictMode>
 );

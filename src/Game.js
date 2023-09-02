@@ -10,7 +10,7 @@ function Square({ i, value, onSquareClick }) {
     <button
       className={
         borderStyle +
-        " border-solid border-[#882f13] w-40 h-40 float-left text-8xl font-bold -mt-1 -mr-1 p-0 text-center"
+        " border-solid border-[#882f13] dark:border-[#f1f0ea] w-40 h-40 float-left text-8xl font-bold -mt-1 -mr-1 p-0 text-center"
       }
       onClick={onSquareClick}
     >
@@ -55,16 +55,19 @@ export default function Board({ playerOne }) {
     status = "Next Player: " + (xIsNext ? "X" : "O") + "'s turn!";
   }
   return (
-    <div className="flex flex-col items-center min-h-screen bg-[#f1f0ea] text-[#882f13]">
+    <div className="flex flex-col items-center min-h-screen bg-[#f1f0ea] text-[#8e2a0c] dark:bg-[#8e2a0c] dark:text-[#f1f0ea]">
       <h1 className="text-7xl font-bold underline underline-offset-4 mb-5">
         Tic Tac Toe
       </h1>
-      <a
-        className="text-xl font-medium mb-10 hover:underline decoration-dotted underline-offset-4"
-        href="https://aakanksha.ca"
-      >
-        Made by Aakanksha
-      </a>
+      <h1 className="text-xl font-medium mb-10">
+        Made by{" "}
+        <a
+          className="hover:underline decoration-dotted underline-offset-4"
+          href="https://aakanksha.ca"
+        >
+          Aakanksha
+        </a>
+      </h1>
       <div className="grid grid-cols-3 gap-0">
         {squares.map((square, index) => (
           <Square

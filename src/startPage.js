@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Game from "./game";
 
 function playerButton(label, name) {
   return (

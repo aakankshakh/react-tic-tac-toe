@@ -2,8 +2,7 @@ import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
-import StartPage from "./startPage";
-import Game from "./game";
+import Game from "src/game";
 
 //<App playerOne={"A"} />
 

@@ -35,25 +35,17 @@ export default function Board({ playerOne }) {
   }
 
   const winner = calculateWinner(squares);
-  let tie = false;
-  for (let i = 0; i < 9; i++) {
-    let square = squares[i];
-    if (!square) {
-      tie = false;
-      break;
-    } else {
-      tie = true;
-    }
-  }
-  // tie = squares.map((square, index) => !(tie && !square));
+  let tie = checkTie(squares);
+
   let status;
-  if (tie) {
-    status = "It's a tie!";
-  } else if (winner) {
+  if (winner) {
     status = "Winner: " + winner;
+  } else if (tie) {
+    status = "It's a tie!";
   } else {
     status = "Next Player: " + (xIsNext ? "X" : "O") + "'s turn!";
   }
+
   return (
     <div className="flex flex-col items-center min-h-screen bg-[#f1f0ea] text-[#8e2a0c] dark:bg-[#8e2a0c] dark:text-[#f1f0ea]">
       <h1 className="text-7xl font-bold underline underline-offset-4 mb-5">
@@ -79,7 +71,6 @@ export default function Board({ playerOne }) {
         ))}
       </div>
       <h1 className="mt-10 text-2xl font-semibold">{status}</h1>
-      <h1 className="mt-10 text-2xl font-semibold">{playerOne}</h1>
     </div>
   );
 }
@@ -102,4 +93,14 @@ function calculateWinner(squares) {
     }
   }
   return null;
+}
+
+function checkTie(squares) {
+  for (let i = 0; i < 9; i++) {
+    let square = squares[i];
+    if (!square) {
+      return false;
+    }
+  }
+  return true;
 }

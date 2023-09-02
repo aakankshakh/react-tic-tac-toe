@@ -62,7 +62,7 @@ export default function teehee() {
         </div>
       </div>
     );
-  } else if (page === "game") {
-    return <Game />;
-  }
+  } //else if (page === "game") {
+  //return <Game />;
+  //}
 }

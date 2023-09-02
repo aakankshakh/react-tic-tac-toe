@@ -34,8 +34,14 @@ export default function Board({ playerOne }) {
     setXIsNext(!xIsNext);
   }
 
+  function reset() {
+    const nullSquares = Array(9).fill(null);
+    setSquares(nullSquares);
+    setXIsNext(true);
+  }
+
   const winner = calculateWinner(squares);
-  let tie = checkTie(squares);
+  const tie = checkTie(squares);
 
   let status;
   if (winner) {
@@ -71,6 +77,13 @@ export default function Board({ playerOne }) {
         ))}
       </div>
       <h1 className="mt-10 text-2xl font-semibold">{status}</h1>
+      <button
+        className="text-xl font-semibold p-2 text-[#f1f0ea] dark:text-[#882f13] border-2 border-[#882f13] dark:border-[#f1f0ea] bg-[#882f13] dark:bg-[#f1f0ea] rounded-md mt-4"
+        onClick={() => reset()}
+      >
+        {" "}
+        Restart Game{" "}
+      </button>
     </div>
   );
 }

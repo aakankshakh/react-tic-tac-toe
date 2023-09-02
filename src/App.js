@@ -1,8 +1,8 @@
 import { useState, onSquareClick } from "react";
 
 function Square({ i, value, onSquareClick }) {
-  const yBorder = i < 3 ? "border-y-2" : "border-b-2";
-  const xBorder = i % 3 === 0 ? "border-x-2" : "border-r-2";
+  const yBorder = i < 3 ? "border-y-4" : "border-b-4";
+  const xBorder = i % 3 === 0 ? "border-x-4" : "border-r-4";
 
   const borderStyle = xBorder + " " + yBorder;
 
@@ -47,7 +47,7 @@ export default function Board() {
         Tic Tac Toe
       </h1>
       <a
-        className="text-l mb-10 hover:underline underline-offset-4"
+        className="text-xl font-medium mb-10 hover:underline decoration-dotted underline-offset-4"
         href="https://aakanksha.ca"
       >
         Made by Aakanksha

@@ -19,7 +19,7 @@ function Square({ i, value, onSquareClick }) {
         borderStyle +
         " " +
         textColor +
-        " border-solid border-[#882f13] dark:border-[#f1f0ea] w-20 h-20 md:w-40 md:h-40 float-left text-6xl md:text-8xl font-bold -mt-1 -mr-1 p-0 text-center"
+        " border-solid border-[#882f13] dark:border-[#f1f0ea] w-24 h-24 md:w-40 md:h-40 float-left text-6xl md:text-8xl font-bold -mt-1 -mr-1 p-0 text-center"
       }
       onClick={onSquareClick}
     >
